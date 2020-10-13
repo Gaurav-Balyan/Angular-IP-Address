@@ -1,0 +1,10 @@
+<app-prime-dropdown
+  [cities]="cities"
+  (selectedCity)="showSelectedCity($event)"
+></app-prime-dropdown>
+<h3>I am in Child Component</h3>
+<ul>
+  <li *ngFor="let city of cityCollection">
+    {{ city.name }}
+  </li>
+</ul>
