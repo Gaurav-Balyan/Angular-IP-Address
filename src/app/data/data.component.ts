@@ -8,6 +8,7 @@ import { SelectItem } from 'primeng/api';
 })
 export class DataComponent implements OnInit {
   cities: any[];
+  city: any;
   cityCollection: string;
 
   constructor() {
@@ -18,11 +19,17 @@ export class DataComponent implements OnInit {
       { name: 'Istanbul', code: 'IST' },
       { name: 'Paris', code: 'PRS' },
     ];
+    this.city = [
+      { name: 'New York', code: 'NY' },
+      { name: 'Rome', code: 'RM' },
+    ];
   }
 
   showSelectedCity(selectedCities) {
     this.cityCollection = selectedCities;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.cityCollection = this.city;
+  }
 }

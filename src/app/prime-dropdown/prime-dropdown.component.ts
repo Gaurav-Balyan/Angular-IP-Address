@@ -7,8 +7,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class PrimeDropdownComponent implements OnInit {
   @Input() cities: any[];
-  city: string;
-  @Output() selectedCity = new EventEmitter<string>();
+  @Input() city: any;
+  @Output() selectedCity = new EventEmitter<any>();
 
   constructor() {}
 
