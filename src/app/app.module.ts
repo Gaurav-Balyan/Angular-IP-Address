@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DropdownModule } from 'primeng/dropdown';
 import { ButtonModule } from 'primeng/button';
 import { MultiSelectModule } from 'primeng/multiselect';
@@ -19,6 +19,7 @@ import { PrimeDropdownComponent } from './prime-dropdown/prime-dropdown.componen
     DropdownModule,
     ButtonModule,
     FormsModule,
+    ReactiveFormsModule,
     MultiSelectModule,
     BrowserAnimationsModule,
   ],

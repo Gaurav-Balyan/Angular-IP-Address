@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-prime-dropdown',
@@ -6,15 +7,22 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./prime-dropdown.component.scss'],
 })
 export class PrimeDropdownComponent implements OnInit {
+  groupForm: FormGroup;
   @Input() cities: any[];
-  @Input() city: any;
+  @Input() citiesSelection: any;
   @Output() selectedCity = new EventEmitter<any>();
 
-  constructor() {}
+  constructor(private fb: FormBuilder) {
+    this.groupForm = this.fb.group({
+      selectedCities: ['', Validators.nullValidator],
+    });
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.groupForm.get('selectedCities').setValue(this.citiesSelection);
+  }
 
-  changeCity() {
-    this.selectedCity.emit(this.city);
+  changeCity(event) {
+    this.selectedCity.emit(event.value);
   }
 }

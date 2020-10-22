@@ -1,11 +1,11 @@
 <h1>Cities[I am in Parent Component]</h1>
-<div class="p-field p-col-12 p-md-4">
+<div class="p-field p-col-12 p-md-4" [formGroup]="groupForm">
   <span class="p-float-label">
     <p-multiSelect
+      formControlName="selectedCities"
       inputId="multiselect"
       [options]="cities"
-      [(ngModel)]="city"
-      (onChange)="changeCity()"
+      (onChange)="changeCity($event)"
       optionLabel="name"
       [filter]="false"
     ></p-multiSelect>
